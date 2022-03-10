@@ -1,39 +1,42 @@
 body {
     font-family: Arial;
     padding: 20px;
-    background: #f1f1f1;
+    background: #c8d8e4;
   }
   
   .header {
     padding: 30px;
     font-size: 40px;
     text-align: center;
-    background: white;
+    background: #c8d8e4;
   }
   
   .leftcolumn {
     float: left;
-    width: 75%;
+    width: 70%;
   }
   
   .rightcolumn {
     float: right;
-    width: 25%;
+    width: 28%;
   }
   
-  
-  .fakeimg {
-    background-color: #aaa;
-    width: 25%;
-    padding: 20px;
-  }
-  
+ 
   .card {
-    background-color: white;
+    background-color: #f2f2f2;
     padding: 20px;
     margin-top: 20px;
+    border-radius: 5px;
+  }
+
+  .card img {
+    height: 300px;
+    max-width:95%;
   }
   
+  .small-card {
+    padding: 20px;
+  }
   
   .row:after {
     content: "";
@@ -45,14 +48,15 @@ body {
   .footer {
     padding: 20px;
     text-align: center;
-    background: #ddd;
+    background: #c8d8e4;
     margin-top: 20px;
   }
 
   .navbar {
-    background-color: #333;
+    background-color: #2b6777;
     overflow: hidden;
   }
+
 
   .navbar a {
       float: left;
@@ -61,12 +65,58 @@ body {
       text-align: center;
       padding: 14px 16px;
       font-size: larger;
+      text-decoration: none;
+  }
+
+  .navbar a:hover {
+    background-color: #52ab98;
+    color: black;
+  }
+
+  .navbar a.active {
+    background-color: #52ab98;
+    color: white;
+  }
+  .navbar .icon {
+    display: none;
   }
   
   /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 800px) {
+    body {
+      padding: 0;
+    }
     .leftcolumn, .rightcolumn {
       width: 100%;
       padding: 0;
     }
+    .card img {
+      width: 90%;
+      height: auto;
+      
+    }
   }
+
+  @media screen and (max-width: 700px) {
+    .navbar a:not(:first-child) {display: none;}
+    .navbar a.icon {
+      float: right;
+      display: block;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .navbar.responsive {position: relative;}
+    
+    .navbar.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    .navbar.responsive a.icon {
+      position: absolute; 
+      right: 0;
+      top: 0;
+    }
+  }
+ 
